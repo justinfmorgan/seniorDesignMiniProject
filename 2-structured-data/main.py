@@ -1,25 +1,53 @@
-# Copyright 2015 Google Inc.
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#     http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
+#!/usr/bin/env python
+from pprint import pprint as pp
+from flask import Flask, flash, redirect, render_template, request, url_for, Response
+from weather import query_api
+from bs4 import BeautifulSoup
+import json
 
-import bookshelf
-import config
+app = Flask(__name__)
 
+LOCALHOSTURL = "http://localhost:5000/"
 
-app = bookshelf.create_app(config)
+@app.route('/', methods = ['POST', 'GET'])
+def index():
+    # if request.method == 'POST':
+    #   mylocation = request.form['mylocation']
+    #   return redirect(url_for('result',locString = mylocation))
+    # else:
+    #   mylocation = request.args.get('mylocation')
+    #   return redirect(url_for('result',locString = mylocation))
+    return render_template('weather.html',
+        data=[{"coord": {"lon": 42.351318, "lat": -71.1090176}}])
 
+@app.route("/result" , methods=['GET', 'POST'])
+def result():
+    data = []
+    error = None
+    coord = request.form.get('comp_select')
+    print(coord)
+    # if request.method == 'POST':
+    #     mylocation = request.form('mylocation')
+    #     print("MY LOCATION STRING IS: " + str(mylocation))
+    #webpage = requests.get(LOCALHOSTURL)
 
-# This is only used when running locally. When running live, gunicorn runs
-# the application.
-if __name__ == '__main__':
-    app.run(host='127.0.0.1', port=8080, debug=True)
+    #soup = BeautifulSoup(htmlString, 'html.parser')
+
+    #method3 = soup.find("div", {"name":"mylocation text-body"})
+
+    #print("HERE IS METHOD 3: " + str(method3) + "\n")
+
+    lat = 42.351318
+    lon = -71.1090176
+
+    resp = query_api(lat, lon)
+    #print(coordTuple)
+    pp(resp)
+    if resp:
+        data.append(resp)
+    if len(data) != 2:
+        error = 'Bad Response from Weather API'
+    return render_template('result.html',data=data,error=error)
+
+if __name__=='__main__':
+    app.run(debug=True)
