@@ -1,5 +1,6 @@
 h1{
     font-family: 'Roboto', sans-serif;
+    z-index:100;
 }
 
 h2{
@@ -8,8 +9,8 @@ h2{
 
 body {
     padding-top: 5rem;
-    background: url(img/bg1.jpg);
-    background-size:cover;
+    /*background: url(img/rain.mp4);
+    background-size:cover;*/
 }
 
 table, th, td {
@@ -21,7 +22,15 @@ table, th, td {
     margin-left: auto;
 }
 
-
+#Video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index:-100;
+    
+  }
 
 .starter-template {
     padding: 3rem 1.5rem;
