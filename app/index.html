@@ -23,7 +23,7 @@
         <style>
             .content {
                 max-width: 500px;
-                margin: auto;
+                margin:auto;
             }
             .data {
                 display:none;
@@ -33,6 +33,10 @@
     </head>
 
     <body>
+            <video autoplay muted loop id="Video">
+                    <source src="img/rain.mp4" type="video/mp4">
+                  </video>
+
         <div align="center" class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
         <script type="text/javascript">
             function onSignIn(googleUser) {
