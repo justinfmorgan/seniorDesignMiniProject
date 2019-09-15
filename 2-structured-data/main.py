@@ -24,8 +24,12 @@ def index():
 def result():
     data = []
     error = None
-    coord = request.form.get('comp_select')
-    print(coord)
+    location = str(request.form.get('finalLocation'))
+
+    print("\nLOCATION IS: " + str(location) + "\n")
+
+    locList = location.split(" ")
+
     # if request.method == 'POST':
     #     mylocation = request.form('mylocation')
     #     print("MY LOCATION STRING IS: " + str(mylocation))
@@ -37,8 +41,12 @@ def result():
 
     #print("HERE IS METHOD 3: " + str(method3) + "\n")
 
-    lat = 42.351318
-    lon = -71.1090176
+    lat = locList[0]
+    lon = locList[1]
+
+    #TESTING LATITUDE AND LONGITUDE
+    #lat = 30.234
+    #lon = -90.245651
 
     resp = query_api(lat, lon)
     #print(coordTuple)
