@@ -1,0 +1,38 @@
+h1{
+    font-family: 'Roboto', sans-serif;
+    z-index:100;
+}
+
+h2{
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+body {
+    padding-top: 5rem;
+    background: url(static/img/rain.mp4);
+    background-size:cover;
+}
+
+table, th, td {
+    border: 1px solid white;
+    color: white;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#Video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index:-100;
+    
+  }
+
+.starter-template {
+    padding: 3rem 1.5rem;
+    text align: center;
+}
