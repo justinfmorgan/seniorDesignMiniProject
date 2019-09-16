@@ -69,11 +69,11 @@
         </script>
 
         <div class="data">
-            <p>Profile Details</p>
+            <h3>Profile Details</h3>
             <img id="profile_picture" class="img-circle
  width="100" height="100" ></img>
             <p id="email" class="alert alert-danger"></p>
-            <button onclick="signout()" class="btn btn-danger">SignOut</button>
+            <button  id = "sign_out_button" onclick="signout()" class="btn btn-danger">SignOut</button>
             <script>
                 function signout(){
                     var auth2 = gapi.auth2.getAuthInstance();
@@ -92,7 +92,7 @@
                 <script type="text/javascript">
                  document.getElementById("finalLocation").value = showPosition();
                 </script>
-                <button type="submit" class="btn">Go</button>
+                <button id = "go_button" type="submit" class="btn">Go</button>
                 </form>
                 <button id="theButton" type="button" onclick="showPosition();">Show Position</button>
                 <div id="mylocation" name="mylocation">
