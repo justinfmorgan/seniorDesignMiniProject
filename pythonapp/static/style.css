@@ -1,16 +1,19 @@
 h1{
     font-family: 'Roboto', sans-serif;
     z-index:100;
+    color: white;
 }
 
 h2{
     font-family: 'Open Sans Condensed', sans-serif;
 }
 
+h3{
+    color:white;
+}
+
 body {
     padding-top: 5rem;
-    background: url(static/img/rain.mp4);
-    background-size:cover;
 }
 
 table, th, td {
@@ -30,6 +33,25 @@ table, th, td {
     min-height: 100%;
     z-index:-100;
     
+  }
+
+  #email{
+      background-color:transparent;
+      border-color: transparent;
+      border:none;
+      color:white;
+  }
+
+  #go_button{
+      color:white;
+      background-color: orchid;
+      border-color:white;
+  }
+
+  #sign_out_button{
+    color:white;
+    background-color: orchid;
+    border-color:white;
   }
 
 .starter-template {
