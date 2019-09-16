@@ -24,7 +24,7 @@
             }
     </style>
 </head>
-<body>
+<body> 
     <video autoplay muted loop id="Video">
                     <source src="static/img/rain.mp4" type="video/mp4">
                   </video>
@@ -35,8 +35,9 @@
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
 <div class="center-on-page">
 {% for d in data %} {% set my_string = "static/img/" + d['weather'][0]['icon']+ ".svg" %}
-<h1><img src="{{ my_string }}" class="svg" fill="white" height="100" vertical-align="middle" width="100"></h1>
-<h1>Weather</h1>
-<h1>{{ d['name'] }}, {{ d['sys']['country'] }}</h1>
-<h1>{{ d['main']['temp']|round|int}} °C</h1>{% endfor %}
+<h1 align="center"><img src="{{ my_string }}" class="svg" fill="white" height="100" vertical-align="middle" width="100"></h1>
+<h1 align="center">Weather</h1>
+<h1 align="center">{{ d['name'] }}, {{ d['sys']['country'] }}</h1>
+<h1 align="center">{{ d['main']['temp']|round|int}} °C</h1>{% endfor %}
+</div>
 </html>
