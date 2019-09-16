@@ -7,10 +7,12 @@ h2{
     font-family: 'Open Sans Condensed', sans-serif;
 }
 
+h3{
+    color: white;
+}
+
 body {
     padding-top: 5rem;
-    /*background: url(img/rain.mp4);
-    background-size:cover;*/
 }
 
 table, th, td {
@@ -30,6 +32,12 @@ table, th, td {
     min-height: 100%;
     z-index:-100;
     
+  }
+
+  #email {
+      color:white;
+      border-color: transparent;
+      margin:auto;
   }
 
 .starter-template {
