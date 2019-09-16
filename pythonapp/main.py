@@ -40,12 +40,12 @@ def result():
 
     #print("HERE IS METHOD 3: " + str(method3) + "\n")
 
-    #lat = locList[0]
-    #lon = locList[1]
+    lat = locList[0]
+    lon = locList[1]
 
     #TESTING LATITUDE AND LONGITUDE
-    lat = 30.234
-    lon = -90.245651
+    #lat = 30.234
+    #lon = -90.245651
 
     resp = query_api(lat, lon)
     #print(coordTuple)
