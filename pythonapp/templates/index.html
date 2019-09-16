@@ -26,7 +26,6 @@
                 if(navigator.geolocation) {
                     navigator.geolocation.getCurrentPosition(function(position) {
                         var positionInfo = "Your current position is (" + "Latitude: " + position.coords.latitude + ", " + "Longitude: " + position.coords.longitude + ")";
-                        document.getElementById("theButton").innerHTML = positionInfo;
                         document.getElementById("finalLocation").value = position.coords.latitude
                         + " " + position.coords.longitude;
                         return position.coords.latitude;
@@ -94,10 +93,6 @@
                 </script>
                 <button type="submit" class="btn">Go</button>
                 </form>
-                <button id="theButton" type="button" onclick="showPosition();">Show Position</button>
-                <div id="mylocation" name="mylocation">
-                    <!--Position information will be inserted here-->
-                </div>
         </div>
         <br>
         <br>
