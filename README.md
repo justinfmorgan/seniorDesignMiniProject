@@ -20,7 +20,7 @@ Friday 9/20: Project due.
 
 # Sprints
 Sprint 1: Starting 9/15 until midnight 9/16. Integrate SSO and the geolocation/weaather pages into a web app using
-Python (flask). Test sign in, page navigation, weather and geolocation.
+Python (flask). Test sign in, page navigation, weather and geolocation. COMPLETED.
 
 Sprint 2: Starting 9/17 until midnight 9/18. Integrate Google Cloud SQL database in order to hold dummy temperature
 and humidity data. Pull and display this data on a chart. Allow capability for different data sets to be shown.
