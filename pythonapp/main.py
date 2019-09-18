@@ -2,12 +2,33 @@
 from pprint import pprint as pp
 from flask import Flask, flash, redirect, render_template, request, url_for, Response
 from weather import query_api
+import sqlalchemy
 from bs4 import BeautifulSoup
 import json
 
 app = Flask(__name__)
 
+cloud_sql_connection_name = "bookshelfproject-252519:northamerica-northeast1:mydb"
+
 LOCALHOSTURL = "http://localhost:5500/"
+
+# The SQLAlchemy engine will help manage interactions, including automatically
+# managing a pool of connections to your database
+db = sqlalchemy.create_engine(
+    # Equivalent URL:
+    # mysql+pymysql://<db_user>:<db_pass>@/<db_name>?unix_socket=/cloudsql/<cloud_sql_instance_name>
+    sqlalchemy.engine.url.URL(
+        drivername='mysql+pymysql',
+        username='root',
+        password='28',
+        database='SeniorDesignMiniDB',
+        query={
+            'unix_socket': '/cloudsql/{}'.format(cloud_sql_connection_name)
+        }
+    ),
+    # ... Specify additional properties here.
+    # ...
+)
 
 @app.route('/', methods = ['POST', 'GET'])
 def index():

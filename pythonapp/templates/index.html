@@ -26,8 +26,7 @@
                 if(navigator.geolocation) {
                     navigator.geolocation.getCurrentPosition(function(position) {
                         var positionInfo = "Your current position is (" + "Latitude: " + position.coords.latitude + ", " + "Longitude: " + position.coords.longitude + ")";
-                        document.getElementById("finalLocation").value = position.coords.latitude
-                        + " " + position.coords.longitude;
+                        document.getElementById("finalLocation").value = position.coords.latitude + " " + position.coords.longitude;
                         return position.coords.latitude;
                     });
                 } else {
@@ -35,7 +34,6 @@
                 }
             }
         </script>
-
         <style>
             .content {
                 max-width: 500px;
@@ -68,8 +66,7 @@
               $(".data").css("display", "block");//diplay profile data
               $("#profile_picture").attr('src', profile.getImageUrl());//display profile picture
               $("#email").text(profile.getEmail());//display email text information
-
-              
+              showPosition();
             }
         </script>
 
