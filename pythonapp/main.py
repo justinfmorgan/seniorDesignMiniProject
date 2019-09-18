@@ -61,12 +61,13 @@ def result():
 
     #print("HERE IS METHOD 3: " + str(method3) + "\n")
 
-    lat = locList[0]
-    lon = locList[1]
-
-    #TESTING LATITUDE AND LONGITUDE
-    #lat = 30.234
-    #lon = -90.245651
+    try:
+        lat = locList[0]
+        lon = locList[1]
+    except IndexError:
+        print("\nInvalid location. Defaulting coordinates.\n")
+        lat = 42.3510312
+        lon = -71.1087235
 
     resp = query_api(lat, lon)
     #print(coordTuple)

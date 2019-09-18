@@ -2,18 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <script>
-        function showPosition() {
-            if(navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(function(position) {
-                    var positionInfo = "Your current position is (" + "Latitude: " + position.coords.latitude + ", " + "Longitude: " + position.coords.longitude + ")";
-                    document.getElementById("mylocation").innerHTML = positionInfo;
-                });
-            } else {
-                alert("Sorry, your browser does not support HTML5 geolocation.");
-            }
-        }
-    </script>
     <style>
             .content {
                 max-width: 500px;
