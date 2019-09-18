@@ -54,6 +54,12 @@ table, th, td {
     border-color:white;
   }
 
+  .table_data{
+      position:fixed;
+      top:250px;
+      left:750px;
+  }
+
 .starter-template {
     padding: 3rem 1.5rem;
     text align: center;
