@@ -9,6 +9,8 @@
         <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Roboto&display=swap" rel="stylesheet">
 
         <script src="https://apis.google.com/js/platform.js" async defer>    </script>
+
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
         
         <meta name="google-signin-client_id" content="94695087988-1snrujgdregortjgorg6d3vtccqinbdh.apps.googleusercontent.com">
 
@@ -72,7 +74,7 @@
 
         <div class="data">
             <h3>Profile Details</h3>
-            <img id="profile_picture" class="img-circle
+            <img id="profile_picture" class="rounded-circle"
  width="100" height="100" ></img>
             <p id="email" class="alert alert-danger"></p>
             <button  id = "sign_out_button" onclick="signout()" class="btn btn-danger">SignOut</button>
@@ -99,16 +101,16 @@
         </div>
         <br>
         <br>
-        <div class = "table_data">
-            <table id = "table1" style = "width 200%">
+        <div class = "table_data" id = "tbl_data">
+            <!--<table id = "table1" style = "width 200%">
                 <tr>
                     <th>Temperature</th>
                     <th>Humidity</th>
                 </tr>
-            </table>
+            </table>-->
             <script>
                 function create_table_vals() {
-                    var rand_temp_val= Math.floor(Math.random()*20);
+                    /*var rand_temp_val= Math.floor(Math.random()*20);
                     var td_1 = document.createElement("td");
                     td_1.innerHTML = rand_temp_val;
 
@@ -121,9 +123,37 @@
 
                     row.appendChild(td_1);
                     row.appendChild(td_2);
-                    tbl.appendChild(row);
+                    tbl.appendChild(row);*/
+
+                    var temp1 = {
+                        x:['source 1', 'source 2', 'source 3'],
+                        y:[Math.floor(Math.random()*20)+15, Math.floor(Math.random()*20)+15, Math.floor(Math.random()*20)+15],
+                        mode: 'markers',
+                        type: 'scatter',
+                        name: 'temperature'
+                    };
+
+                    var humd1 = {
+                        x:['source 1', 'source 2', 'source 3'],
+                        y:[Math.floor(Math.random()*20)+15, Math.floor(Math.random()*20)+15, Math.floor(Math.random()*20)+15],
+                        mode: 'lines',
+                        type: 'scatter',
+                        name: 'humidity'
+                    };
+
+                    
+
+                    var data1 = [temp1, humd1];
+                    
+                    var layout = {
+                        title: "Temperature shown with dots. Humidity shown with lines.",
+                    }
 
                     $(".table_data").css("display","block")
+
+                    Plotly.newPlot('tbl_data', data1, layout);
+
+                    
                 }       
             </script>
         </div>
