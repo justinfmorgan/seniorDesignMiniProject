@@ -29,7 +29,7 @@
                     navigator.geolocation.getCurrentPosition(function(position) {
                         var positionInfo = "Your current position is (" + "Latitude: " + position.coords.latitude + ", " + "Longitude: " + position.coords.longitude + ")";
                         document.getElementById("finalLocation").value = position.coords.latitude + " " + position.coords.longitude;
-                        return position.coords.latitude;
+                        return position.coords.latitude + " " + position.coords.longitude;
                     });
                 } else {
                     alert("Sorry, your browser does not support HTML5 geolocation.");
@@ -52,7 +52,7 @@
         
     </head>
 
-    <body>
+    <body onload="javascript:showPosition()">
         <video autoplay muted loop id="Video">
                     <source src="static/img/rain.mp4" type="video/mp4">
                   </video>
@@ -68,7 +68,6 @@
               $(".data").css("display", "block");//diplay profile data
               $("#profile_picture").attr('src', profile.getImageUrl());//display profile picture
               $("#email").text(profile.getEmail());//display email text information
-              showPosition();
             }
         </script>
 
