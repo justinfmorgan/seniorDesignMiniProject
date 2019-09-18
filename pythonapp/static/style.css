@@ -55,6 +55,7 @@ table, th, td {
   }
 
   .table_data{
+      margin:auto;
       position:fixed;
       top:220px;;
       left:750px;
