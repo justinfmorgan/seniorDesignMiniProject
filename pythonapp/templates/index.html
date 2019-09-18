@@ -131,7 +131,7 @@
                         y:[Math.floor(Math.random()*20)+15, Math.floor(Math.random()*20)+15, Math.floor(Math.random()*20)+15],
                         mode: 'markers',
                         type: 'scatter',
-                        name: 'temperature'
+                        name: 'temperature',
                     };
 
                     var humd1 = {
@@ -139,7 +139,7 @@
                         y:[Math.floor(Math.random()*20)+15, Math.floor(Math.random()*20)+15, Math.floor(Math.random()*20)+15],
                         mode: 'lines',
                         type: 'scatter',
-                        name: 'humidity'
+                        name: 'humidity',
                     };
 
                     
@@ -152,7 +152,7 @@
 
                     $(".table_data").css("display","block")
 
-                    Plotly.newPlot('tbl_data', data1, layout);
+                    Plotly.newPlot('tbl_data', data1, layout, {}, {responsive: true});
 
                     
                 }       
