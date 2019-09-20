@@ -1,7 +1,9 @@
 # 2019-mini-s28
 
 # Project Summary
-(Insert project summary here)
+EC463 Weather Application by Donavan Jones and Justin Morgan
+
+Welcome to our EC463 Software mini project! Upon first navigation to the web app, please answer 'allow' when prompted for your current location. Otherwise the weather functionality will default to getting the weather from somewhere else. Single sign on with a Google account in order to view the user's Google profile picture, email, as well as the Cloud SQL DB data being pulled in to form a javascript graph on the right side of the browser. This data is sitting in the Google Cloud SQL Database for the project, but which rows in the table are taken is decided by randomly generated integers upon loading the page. The data points displayed are for theoretical 'rooms' that the temperature and humidity sensors are in. Hit 'Go' underneath the 'Weather at my Current Location' header in order to view the current forecast and temperature in degrees Celcius (Weather data pulled via the Open Weather Map API). Hit the back button on the web browser in order to navigate to the previous screen, and 'Sign out' to sign out of the Google Account.
 
 # App URL (Cloud Deployment)
 https://bookshelfproject-252519.appspot.com
