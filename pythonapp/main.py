@@ -3,10 +3,11 @@ from pprint import pprint as pp
 from flask import Flask, flash, redirect, render_template, request, url_for, Response
 from weather import query_api
 import sqlalchemy
-from bs4 import BeautifulSoup
+import config
 import json
 
 app = Flask(__name__)
+app.config.from_object(config)
 
 cloud_sql_connection_name = "bookshelfproject-252519:northamerica-northeast1:mydb"
 
@@ -32,13 +33,25 @@ db = sqlalchemy.create_engine(
 
 @app.route('/', methods = ['POST', 'GET'])
 def index():
+    humidityArray = []
+    temperatureArray = []
+    with db.connect() as conn:
+        myData = conn.execute(
+            "SELECT * FROM mySensors;").fetchall()
+        # Convert the results into a list of dicts representing votes
+        for row in myData:
+            humidityArray.append(row[0])
+            temperatureArray.append(row[1])
+
+    # for point in dataArray:
+    #     print(point)
     # if request.method == 'POST':
     #   mylocation = request.form['mylocation']
     #   return redirect(url_for('result',locString = mylocation))
     # else:
     #   mylocation = request.args.get('mylocation')
     #   return redirect(url_for('result',locString = mylocation))
-    return render_template('index.html')
+    return render_template('index.html', humidityData=humidityArray, tempData=temperatureArray)
 
 @app.route("/result" , methods=['GET', 'POST'])
 def result():
