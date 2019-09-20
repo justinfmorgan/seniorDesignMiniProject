@@ -35,17 +35,16 @@ Tuesday 9/17: Start Sprint 2. Complete by Wednesday midnight.
 
 Wednesday 9/18: Hard deadline for sprint 2 at midnight. Project fully completed and tested. ONLY cosmetic changes allowed after this
 
-Thursday 9/19: Finalize cosmetic changes. Deploy to google cloud. Begin and finish sprint 3. Have everything fully deployed and tested (multiple users in particular) by midnight.
+Thursday 9/19: Complete sprint 2. Finalize cosmetic changes. Deploy to google cloud. Have everything fully deployed and tested (multiple users in particular) by midnight.
 
 Friday 9/20: Project due. Keep app deployed.
 
 # Sprints
 Sprint 1: Starting 9/15 until midnight 9/16. Integrate SSO and the geolocation/weaather pages into a web app using
-Python (flask). Test sign in, page navigation, weather and geolocation. COMPLETED.
+Python (flask). Test sign in, page navigation, weather and geolocation. Release version 1.0 COMPLETED.
 
 Sprint 2: Starting 9/17 until midnight 9/18. Integrate Google Cloud SQL database in order to hold dummy temperature
-and humidity data. Pull and display this data on a chart. Allow capability for different data sets to be shown.
-
-Sprint 3: 9/19 until midnight. Finalize all cosmetic changes and deploy to google cloud. Test multiple user accesses.
+and humidity data. Pull and display this data on a chart. Allow capability for different data sets to be shown. 
+Finalize all cosmetic changes and deploy to google cloud. Test multiple user accesses. Release version 2.0 COMPLETED
 
 
