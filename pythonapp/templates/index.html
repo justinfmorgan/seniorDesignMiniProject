@@ -125,23 +125,24 @@
                     row.appendChild(td_1);
                     row.appendChild(td_2);
                     tbl.appendChild(row);*/
+                    var temperatureArray = {{tempData|tojson}};
+                    var humidityArray = {{humidityData|tojson}};
 
                     var temp1 = {
-                        x:['living room', 'kitchen', 'bedroom'],
-                        y:[Math.floor(Math.random()*20)+15, Math.floor(Math.random()*20)+15, Math.floor(Math.random()*20)+15],
+                        x:['living room', 'kitchen', 'bedroom', 'bathroom', 'garage'],
+                        y:[temperatureArray[Math.ceil((Math.random()*18))], temperatureArray[Math.ceil((Math.random()*18))], temperatureArray[Math.ceil((Math.random()*18))], temperatureArray[Math.ceil((Math.random()*18))], temperatureArray[Math.ceil((Math.random()*18))]],
                         mode: 'markers',
                         type: 'scatter',
-                        name: 'temperature',
+                        name: 'temperature (F)',
                     };
 
                     var humd1 = {
-                        x:['living room', 'kitchen', 'bedroom'],
-                        y:[Math.floor(Math.random()*20)+15, Math.floor(Math.random()*20)+15, Math.floor(Math.random()*20)+15],
+                        x:['living room', 'kitchen', 'bedroom', 'bathroom', 'garage'],
+                        y:[humidityArray[Math.ceil((Math.random()*18))], humidityArray[Math.ceil((Math.random()*18))], humidityArray[Math.ceil((Math.random()*18))], humidityArray[Math.ceil((Math.random()*18))], humidityArray[Math.ceil((Math.random()*18))]],
                         mode: 'lines',
                         type: 'scatter',
-                        name: 'humidity',
+                        name: '% humidity',
                     };
-
                     
 
                     var data1 = [temp1, humd1];
