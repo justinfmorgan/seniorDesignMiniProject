@@ -10,6 +10,7 @@ https://bookshelfproject-252519.appspot.com
 
 # Video Demonstration (In case the Google Cloud deployment shuts down due to insufficient funds)
 Click the image below for the video demo!
+<br />
 [![Here's the link to my video](https://img.youtube.com/vi/yrRp5hI1XUU/0.jpg)](https://www.youtube.com/watch?v=yrRp5hI1XUU "EC463 Mini Project Demo")
 
 # Sources Used
